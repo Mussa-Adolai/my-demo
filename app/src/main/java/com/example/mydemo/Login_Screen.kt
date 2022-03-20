@@ -43,7 +43,7 @@ class Login_Screen : AppCompatActivity() {
             val UserName = etUsername.text.toString()
             val Password = etpassword.text.toString()
 
-            val user = User(UserName, Password)
+            var user = User(UserName, Password)
 
             for (userArray in arr) {
 
@@ -55,13 +55,11 @@ class Login_Screen : AppCompatActivity() {
                     startActivity(i)
                     break
                 }
-                else {
-                    Toast.makeText(this, "Check your username or password or Agreement Terms", Toast.LENGTH_SHORT)
-                        .show()
 
-                }
+            }
 
-
+            if (!checkBoxLog.isChecked){
+                Toast.makeText(this, "Must agreement Terms", Toast.LENGTH_SHORT).show()
             }
 
 
