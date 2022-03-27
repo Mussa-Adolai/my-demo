@@ -51,12 +51,17 @@ class Login_Screen : AppCompatActivity() {
                             && userArray.password == user.password) && checkBoxLog.isChecked  )  {
                  finish()
 
-                   val  i = Intent(this,MainActivity::class.java)
-                    startActivity(i)
+                   val  int = Intent(this,MainActivity::class.java)
+                    int.putExtra("email",userArray.email)
+                    startActivity(int)
                     break
                 }
+//                else{
+//                   Toast.makeText(this, "check your data",Toast.LENGTH_SHORT).show()
+//
 
             }
+
 
             if (!checkBoxLog.isChecked){
                 Toast.makeText(this, "Must agreement Terms", Toast.LENGTH_SHORT).show()
@@ -64,20 +69,22 @@ class Login_Screen : AppCompatActivity() {
 
 
             if (etUsername.text.isEmpty() == true) {
-                etUsername.error = "Enter Yor Username"
+                etUsername.error = "Enter Your Username"
 
             }else if (etpassword.text.isEmpty() == true) {
-                    etpassword.error = ("Enter Yor Password")
-                }
-            //                else if (checkBoxLog.isChecked== false){
-//                Toast.makeText(this, "Agree Of Terms", Toast.LENGTH_SHORT)
-//                    .show()
-//                }
+                etpassword.error = ("Enter Your Password")
+            }
+
+        }
+
+
+
+
 
                 }
             }
 
-        }
+
 
 
 
