@@ -8,12 +8,14 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
     lateinit var drawerLayout:DrawerLayout
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
     lateinit var navigationView: NavigationView
+    lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById(R.id.drawerLayout)
         toolbar = findViewById(R.id.toolBar)
         navigationView = findViewById(R.id.navDrawer)
+        recyclerView = findViewById(R.id.storiesRecycle)
 
 
        setSupportActionBar(toolbar)
@@ -39,7 +42,7 @@ class MainActivity : AppCompatActivity() {
            when(it.itemId){
                R.id.homeI ->{
                    drawerLayout.closeDrawer(GravityCompat.START)
-                   true 
+                   true
                }
                R.id.logOut->{
                    finish()
@@ -54,12 +57,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun upDateEmailInHandler(email: String) {
-      val  hraderView = navigationView.getHeaderView(0)
-        val textViewEmail = hraderView.findViewById<TextView>(R.id.tv_email)
+      val  headerView = navigationView.getHeaderView(0)
+        val textViewEmail = headerView.findViewById<TextView>(R.id.tv_email)
         textViewEmail.text = email
     }
 
-    private fun setUpDrawer() {
+    private fun  setUpDrawer() {
         val toggle = ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
