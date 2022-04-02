@@ -9,6 +9,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
     lateinit var navigationView: NavigationView
     lateinit var recyclerView: RecyclerView
+    lateinit var btnAddStory: FloatingActionButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolBar)
         navigationView = findViewById(R.id.navDrawer)
         recyclerView = findViewById(R.id.storiesRecycle)
+        btnAddStory = findViewById(R.id.btnAddStory)
 
 
        setSupportActionBar(toolbar)
@@ -35,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         setUpDrawer()
         upDateEmailInHandler(email!!)
         drawerClicks()
+        openAddStoryActivity()
     }
 
     private fun drawerClicks() {
@@ -76,6 +80,12 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             else -> true
+        }
+    }
+    private fun openAddStoryActivity(){
+        btnAddStory.setOnClickListener {
+            val i = Intent(this,AddStoryActivity::class.java)
+            startActivity(i)
         }
     }
 }
