@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         upDateEmailInHandler(email!!)
         drawerClicks()
         openAddStoryActivity()
+        displayStories()
     }
 
     private fun drawerClicks() {
@@ -87,5 +88,52 @@ class MainActivity : AppCompatActivity() {
             val i = Intent(this,AddStoryActivity::class.java)
             startActivity(i)
         }
+
+
+    }
+
+    private fun displayStories(){
+        var storiesArray = ArrayList<Story>()
+        storiesArray.add(Story("This Is My First Story",
+            "This Is Subtitle",
+                "Welcome To My First Story"))
+
+        storiesArray.add(Story("This Is My Second Story",
+            "This Is Subtitle",
+                "Welcome To My Second Story"))
+
+        storiesArray.add(Story("This Is My Third Story",
+            "This Is Subtitle",
+                "Welcome To My Third Story"))
+
+        storiesArray.add(Story("This Is My Third Story",
+            "This Is Subtitle",
+                "Welcome To My Third Story"))
+
+        storiesArray.add(Story("This Is My Third Story",
+            "This Is Subtitle",
+                "Welcome To My Third Story"))
+
+       storiesArray.add(Story("This Is My Third Story",
+            "This Is Subtitle",
+                "Welcome To My Third Story"))
+
+        storiesArray.add(Story("This Is My Third Story",
+                    "This Is Subtitle",
+                        "Welcome To My Third Story"))
+
+        storiesArray.add(Story("This Is My Third Story",
+                            "This Is Subtitle",
+                                "Welcome To My Third Story"))
+
+        storiesArray.add(Story("This Is My Third Story",
+                            "This Is Subtitle",
+                                "Welcome To My Third Story"))
+
+        val customAdapter  = CustomAdapter(storiesArray,this)
+
+        recyclerView.adapter = customAdapter
+
+
     }
 }
