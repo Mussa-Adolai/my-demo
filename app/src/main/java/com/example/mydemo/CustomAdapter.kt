@@ -20,13 +20,17 @@ class CustomAdapter(val storiesList: ArrayList <Story> , val context : Context)
     }
 
     override fun onBindViewHolder(holder: DataHolder, position: Int) {
+        val story = storiesList[position]
+        holder.storyLetter.text = story.title
+        holder.storySubtitle.text = story.subtitle
+
 
     }
 
     override fun getItemCount(): Int {
 
     }
-    class DataHolder(item : View) : RecyclerView.ViewHolder(item){ //
+    class DataHolder(item : View) : RecyclerView.ViewHolder(item){
         val storyTitle:TextView = item.findViewById(R.id.tvTitle)
         val storyLetter:TextView = item.findViewById(R.id.tvStoryLetter)
         val storySubtitle:TextView = item.findViewById(R.id.tvSubtitle)
