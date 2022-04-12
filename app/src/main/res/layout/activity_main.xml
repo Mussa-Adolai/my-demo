@@ -23,29 +23,33 @@
            app:layout_constraintEnd_toEndOf="parent"
            android:background="#0782BA"
            />
+
        <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/storiesRecycle"
            android:layout_width="match_parent"
            android:layout_height="0dp"
-           android:id="@+id/storiesRecycle"
-           app:layout_constraintTop_toBottomOf="@id/toolBar"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
+           android:layout_marginTop="16dp"
+           android:layout_marginBottom="140dp"
            android:orientation="vertical"
-           tools:itemCount="5"
-           tools:listitem="@layout/custom_layuot"
-           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+           app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintHorizontal_bias="1.0"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/toolBar"
+           tools:listitem="@layout/custom_layuot" />
 
        <com.google.android.material.floatingactionbutton.FloatingActionButton
            android:id="@+id/btnAddStory"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           android:layout_marginBottom="16dp"
            android:layout_marginEnd="16dp"
+           android:layout_marginBottom="52dp"
            android:backgroundTint="@color/teal_700"
            android:src="@drawable/ic_baseline_add_24"
-           app:tint="@color/white"/>
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:tint="@color/white" />
 
    </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -56,6 +60,8 @@
         app:menu="@menu/menu"
         app:headerLayout="@layout/heder_nav"
         android:layout_gravity="start"/>
+
+
 
 
 
