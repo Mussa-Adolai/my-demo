@@ -1,6 +1,7 @@
 package com.example.mydemo
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -29,6 +30,14 @@ class CustomAdapter(val storiesList: ArrayList <Story> , val context : Context)
         holder.storyTitle.text = story.title
 
         generateColors(holder,position)
+
+        holder.itemView.setOnClickListener(){
+         val i = Intent(context,StoryDetails::class.java)
+
+            i.putExtra("title",story.title)
+            i.putExtra("disc",story.description)
+            context.startActivity(i)
+        }
     }
 
     private fun generateColors(holder: DataHolder,position: Int){
