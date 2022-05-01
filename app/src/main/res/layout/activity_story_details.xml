@@ -13,7 +13,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/teal_700" />
+        android:background="@color/teal_700">
+
+       <ImageView
+           android:id="@+id/bArrD"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           android:src="@drawable/ic_baseline_arrow_back_24"/>
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv"
