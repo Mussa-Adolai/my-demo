@@ -1,6 +1,8 @@
 package com.example.mydemo
 
+import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -19,9 +21,11 @@ class MainActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var btnAddStory: FloatingActionButton
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
         val email = intent.getStringExtra("email")
 
@@ -96,7 +100,9 @@ class MainActivity : AppCompatActivity() {
         var storiesArray = ArrayList<Story>()
         storiesArray.add(Story("This Is My First Story",
             "This Is Subtitle",
-                "Welcome To My First Story"))
+                "Welcome To My First StoryWelcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First StoryWelcome To My First Story " +
+                        "Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story  Welcome To My First Story Welcome To My First Story" +
+                        " Welcome To My First Story Welcome To My First Story Welcome To My First Story  Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story  Welcome To My First Story  Welcome To My First Story  Welcome To My First Story  Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story Welcome To My First Story  Welcome To My First Storyyy  "))
 
         storiesArray.add(Story("This Is My Second Story",
             "This Is Subtitle",
